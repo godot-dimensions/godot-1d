@@ -1,4 +1,4 @@
-# Godot auto generated files
+# Godot specific ignores
 *.gen.*
 .godot/
 .import/
@@ -58,10 +58,5 @@ ipch/
 $RECYCLE.BIN/
 *.autosave
 *~
-~$*
 .DS_Store
-.Trash-*
 [Tt]humbs.db
-__MACOSX
-logo.h
-logs/
