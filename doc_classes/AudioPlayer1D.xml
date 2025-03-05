@@ -28,7 +28,7 @@
 			<return type="void" />
 			<param index="0" name="from_position" type="float" default="0.0" />
 			<description>
-				Plays the audio from the given position [code]from_position[/code], in seconds.
+				Plays the audio from the given position [param from_position], in seconds.
 			</description>
 		</method>
 		<method name="seek">
@@ -77,7 +77,7 @@
 			The [AudioStream] object to be played.
 		</member>
 		<member name="stream_paused" type="bool" setter="set_stream_paused" getter="get_stream_paused" default="false">
-			If [code]true[/code], the playback is paused. You can resume it by setting [code]stream_paused[/code] to [code]false[/code].
+			If [code]true[/code], the playback is paused. You can resume it by setting [member stream_paused] to [code]false[/code].
 		</member>
 		<member name="volume_db" type="float" setter="set_volume_db" getter="get_volume_db" default="0.0">
 			Base volume without dampening.

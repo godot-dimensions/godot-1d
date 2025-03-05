@@ -13,14 +13,14 @@
 			<return type="void" />
 			<param index="0" name="ratio" type="float" />
 			<description>
-				Multiplies the current scale by the [code]ratio[/code] value.
+				Multiplies the current scale by the [param ratio] value.
 			</description>
 		</method>
 		<method name="translate">
 			<return type="void" />
 			<param index="0" name="offset" type="float" />
 			<description>
-				Translates the node by the given [code]offset[/code] in local coordinates.
+				Translates the node by the given [param offset] in local coordinates.
 			</description>
 		</method>
 	</methods>
