@@ -11,17 +11,39 @@ Have you ever wanted to make 1D games in Godot?
 For anyone who does want to make a 1D game, Node1D and other 1D nodes now
 exist, just download this module and compile it with Godot!
 
-Node1D is a
-[`CanvasItem`](https://docs.godotengine.org/en/stable/classes/class_canvasitem.html)-derived
-node, which means that it can exist in the same scene hierarchy as
-Node2D and Control nodes and it will preserve positions etc. This
-means that you can add 2D nodes as children of 1D nodes to have a
-2D appearance with 1D game logic (1.5D...?) or you can make a 2D game
-with a node that can only move left and right (why not just use a
-Node2D and only change the X position? Good question). Node1D is also
-integrated with CanvasItem editor, so you can move and scale it
-with the 2D editor tools (trying to move up/down, scale up/down,
-or rotate it just does nothing).
+## Installation
+
+First, have all the Godot dependencies installed on your computer as per the
+[official instructions](https://docs.godotengine.org/en/stable/contributing/development/compiling/index.html).
+
+If you want all of the Godot Dimensions modules at once, you can grab a
+branch of [our Godot fork](https://github.com/godot-dimensions/godot/tree/dimensions-latest).
+
+```shell
+git clone https://github.com/godot-dimensions/godot godot-dimensions
+cd godot-dimensions
+# First, make sure you can compile regular Godot.
+scons
+# Then, switch to the dimensions branch and download the submodules.
+git switch dimensions-latest
+git submodule update --init --recursive
+scons
+# Re-run the `scons` command to re-compile if you make changes.
+```
+
+Alternatively, if you only want 1D, you can start with any clone
+of Godot Engine and add this module to it:
+
+```shell
+cd modules
+git clone https://github.com/godot-dimensions/godot-1d 1d
+# Make sure the folder is named `1d`, not `godot-1d`!
+cd ..
+scons
+# Re-run the `scons` command to re-compile if you make changes.
+```
+
+It should now be successfully compiled, and you can run the executable in the `bin/` folder.
 
 ## Nodes
 
@@ -34,6 +56,18 @@ or rotate it just does nothing).
     * `Area1D`: 1D area for physics detection.
     * `KinematicBody1D`: 1D kinematic body used for characters and other animated objects.
     * `StaticBody1D`: 1D physics body which is static and does not move.
+
+Node1D is a
+[`CanvasItem`](https://docs.godotengine.org/en/stable/classes/class_canvasitem.html)-derived
+node, which means that it can exist in the same scene hierarchy as
+Node2D and Control nodes and it will preserve positions etc. This
+means that you can add 2D nodes as children of 1D nodes to have a
+2D appearance with 1D game logic (1.5D...?) or you can make a 2D game
+with a node that can only move left and right (why not just use a
+Node2D and only change the X position? Good question). Node1D is also
+integrated with CanvasItem editor, so you can move and scale it
+with the 2D editor tools (trying to move up/down, scale up/down,
+or rotate it just does nothing).
 
 The physics nodes are backed by a `PhysicsServer1D` singleton (not exposed).
 It doesn't do any processing on its own, but it does all of the
