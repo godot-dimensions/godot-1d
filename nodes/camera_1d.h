@@ -1,5 +1,4 @@
-#ifndef CAMERA_1D_H
-#define CAMERA_1D_H
+#pragma once
 
 #include "node_1d.h"
 class Camera2D;
@@ -25,5 +24,3 @@ public:
 
 	Camera1D();
 };
-
-#endif // CAMERA_1D_H

@@ -1,5 +1,4 @@
-#ifndef AUDIO_LISTENER_1D_H
-#define AUDIO_LISTENER_1D_H
+#pragma once
 
 #include "node_1d.h"
 class AudioListener2D;
@@ -25,5 +24,3 @@ public:
 
 	AudioListener1D();
 };
-
-#endif // AUDIO_LISTENER_1D_H

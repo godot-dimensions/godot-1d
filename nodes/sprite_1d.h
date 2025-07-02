@@ -1,5 +1,4 @@
-#ifndef SPRITE_1D_H
-#define SPRITE_1D_H
+#pragma once
 
 #include "node_1d.h"
 #include "scene/resources/texture.h"
@@ -38,5 +37,3 @@ public:
 
 	Sprite1D();
 };
-
-#endif // SPRITE_1D_H

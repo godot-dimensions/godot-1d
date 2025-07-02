@@ -1,5 +1,4 @@
-#ifndef AUDIO_PLAYER_1D_H
-#define AUDIO_PLAYER_1D_H
+#pragma once
 
 #include "node_1d.h"
 #include "servers/audio/audio_stream.h"
@@ -85,5 +84,3 @@ public:
 	AudioPlayer1D();
 	~AudioPlayer1D();
 };
-
-#endif // AUDIO_PLAYER_1D_H

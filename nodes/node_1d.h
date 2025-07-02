@@ -1,5 +1,6 @@
-#ifndef NODE1D_H
-#define NODE1D_H
+#pragma once
+
+#include "../godot_1d_defines.h"
 
 #include "scene/main/canvas_item.h"
 
@@ -46,5 +47,3 @@ public:
 	void set_global_position(const real_t p_global_position);
 	void set_global_scale(const real_t p_global_scale);
 };
-
-#endif // NODE1D_H
