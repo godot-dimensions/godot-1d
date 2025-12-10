@@ -10,6 +10,7 @@
 *.lib
 *.lo
 *.o
+*.obj
 *.os
 *.ox
 *.Plo
