@@ -3,7 +3,12 @@
 #include "node_1d.h"
 
 #include "servers/audio/audio_stream.h"
+
+#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR < 6
 #include "servers/audio_server.h"
+#else
+#include "servers/audio/audio_server.h"
+#endif
 
 class AudioPlayer1D : public Node1D {
 	GDCLASS(AudioPlayer1D, Node1D);
