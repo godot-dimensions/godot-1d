@@ -146,7 +146,7 @@ void PhysicsServer1D::move_area(Area1D *p_area, const real_t p_movement) {
 	} else {
 		right_extent += p_global_movement;
 	}
-	// Areas do n ot collide so they can always move the whole way.
+	// Areas do not collide so they can always move the whole way.
 	real_t new_body_position = area_position + p_global_movement;
 	p_area->set_global_position(new_body_position);
 	real_t end_left_extent = new_body_position - area_extents;

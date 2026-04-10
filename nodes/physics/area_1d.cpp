@@ -1,6 +1,7 @@
 #include "area_1d.h"
 
 #include "physics_server_1d.h"
+
 #include "scene/scene_string_names.h"
 
 void Area1D::_notification(const int p_what) {

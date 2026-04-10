@@ -2,32 +2,20 @@ name: 📊 Static Checks
 on: [push, pull_request]
 
 jobs:
-  format:
-    name: File formatting (file_format.sh)
+  static-checks:
+    name: Code style and file formatting
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
 
-      # Azure repositories are not reliable, we need to prevent Azure giving us packages.
-      - name: Make apt sources.list use the default Ubuntu repositories
+      - name: General setup
         run: |
-          sudo rm -f /etc/apt/sources.list.d/*
-          sudo cp -f ./.github/workflows/sources.list /etc/apt/sources.list
-          wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-          sudo apt-add-repository "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main"
-          sudo apt-get update
+          git config diff.wsErrorHighlight all
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get install -qq dos2unix recode clang-format-13
-          sudo update-alternatives --remove-all clang-format
-          sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-13 100
-
-      - name: File formatting checks (file_format.sh)
-        run: |
-          bash ./.github/workflows/file_format.sh
-
-      - name: Style checks via clang-format (clang_format.sh)
-        run: |
-          bash ./.github/workflows/clang_format.sh
+      - name: Style checks via pre-commit
+        uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: --all-files

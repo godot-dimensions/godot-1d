@@ -1,6 +1,7 @@
 #pragma once
 
 #include "node_1d.h"
+
 #include "scene/resources/texture.h"
 
 class Sprite1D : public Node1D {

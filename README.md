@@ -108,7 +108,7 @@ Keep in mind that you also have time at your disposal! And colors! And audio!
 Plus you can always throw Sprite2D into your 1D game! You could make a rhythm
 game with objects moving left and right. Maybe you could make a game
 like the Google Chrome offline dinosaur without jumping?
-**The possibilties are *quite limited!***
+**The possibilities are *quite limited!***
 
 Besides, science isn't about why, it's about why not. Why are all of
 these nodes 1 dimensional? Why not marry 2+ dimensional nodes if you
