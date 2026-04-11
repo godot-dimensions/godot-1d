@@ -14,6 +14,16 @@
 #define GODOT_VERSION_PATCH VERSION_PATCH
 #endif
 
+#if GODOT_VERSION_MAJOR > 4 || (GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR > 6)
+// In Godot 4.7, callable_mp was moved to its own header.
+#include "core/object/callable_mp.h"
+#endif
+
+#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR < 5
+// In Godot 4.5 and later, namespaces were capitalized: core_bind -> CoreBind.
+#define CoreBind core_bind
+#endif
+
 #if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR > 4
 // In Godot 4.5 and later, Math_TAU was replaced with Math::TAU, and a few other things also moved to the Math namespace.
 #define ABS Math::abs

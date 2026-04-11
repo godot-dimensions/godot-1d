@@ -1,5 +1,11 @@
 #include "node_1d.h"
 
+#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR < 6
+#include "servers/rendering_server.h"
+#else
+#include "servers/rendering/rendering_server.h"
+#endif
+
 #ifdef TOOLS_ENABLED
 Dictionary Node1D::_edit_get_state() const {
 	Dictionary state;

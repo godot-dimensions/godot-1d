@@ -3,6 +3,7 @@
 #include "audio_listener_1d.h"
 #include "camera_1d.h"
 
+#include "core/config/engine.h"
 #include "scene/2d/audio_listener_2d.h"
 #include "scene/2d/camera_2d.h"
 #include "scene/main/viewport.h"
