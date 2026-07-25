@@ -2,11 +2,19 @@
 
 #include "node_1d.h"
 
+#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR < 8
+// Godot 4.0 to 4.7 place AudioStream in `servers/audio/audio_stream.h`.
 #include "servers/audio/audio_stream.h"
+#else
+// Godot 4.8 and later place AudioStream in `scene/resources/audio/audio_stream.h`.
+#include "scene/resources/audio/audio_stream.h"
+#endif
 
 #if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR < 6
+// Godot 4.0 to 4.5 place AudioServer in `servers/audio_server.h`.
 #include "servers/audio_server.h"
 #else
+// Godot 4.6 and later place AudioServer in `servers/audio/audio_server.h`.
 #include "servers/audio/audio_server.h"
 #endif
 
