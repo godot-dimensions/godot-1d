@@ -13,10 +13,11 @@ void initialize_1d_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
+	// Classes MUST be registered in inheritance order.
+	ClassDB::register_class<Node1D>();
 	ClassDB::register_class<AudioListener1D>();
 	ClassDB::register_class<AudioPlayer1D>();
 	ClassDB::register_class<Camera1D>();
-	ClassDB::register_class<Node1D>();
 	ClassDB::register_class<Sprite1D>();
 
 	// Physics.
