@@ -58,12 +58,12 @@ void Area1D::_bind_methods() {
 	body_arg.class_name = SNAME("CollisionObject1D");
 
 	MethodInfo body_entered_methodinfo;
-	body_entered_methodinfo.name = SceneStringNames::get_singleton()->body_exited;
+	body_entered_methodinfo.name = StringName("body_exited");
 	body_entered_methodinfo.arguments.push_back(body_arg);
 	ClassDB::add_signal(SNAME("Area1D"), body_entered_methodinfo);
 
 	MethodInfo body_exited_methodinfo;
-	body_exited_methodinfo.name = SceneStringNames::get_singleton()->body_entered;
+	body_exited_methodinfo.name = StringName("body_entered");
 	body_exited_methodinfo.arguments.push_back(body_arg);
 	ClassDB::add_signal(SNAME("Area1D"), body_exited_methodinfo);
 
@@ -73,12 +73,12 @@ void Area1D::_bind_methods() {
 	area_arg.class_name = SNAME("Area1D");
 
 	MethodInfo area_entered_methodinfo;
-	area_entered_methodinfo.name = SceneStringNames::get_singleton()->area_exited;
+	area_entered_methodinfo.name = StringName("area_exited");
 	area_entered_methodinfo.arguments.push_back(area_arg);
 	ClassDB::add_signal(SNAME("Area1D"), area_entered_methodinfo);
 
 	MethodInfo area_exited_methodinfo;
-	area_exited_methodinfo.name = SceneStringNames::get_singleton()->area_entered;
+	area_exited_methodinfo.name = StringName("area_entered");
 	area_exited_methodinfo.arguments.push_back(area_arg);
 	ClassDB::add_signal(SNAME("Area1D"), area_exited_methodinfo);
 }
