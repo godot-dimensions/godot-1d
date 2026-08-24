@@ -129,7 +129,9 @@ real_t Node1D::get_global_scale() const {
 void Node1D::set_global_position(const real_t p_global_position) {
 	Node1D *node_1d_parent = Object::cast_to<Node1D>(get_parent());
 	if (node_1d_parent) {
-		set_position((p_global_position - node_1d_parent->get_global_position()) / node_1d_parent->get_global_scale());
+		const real_t parent_global_scale = node_1d_parent->get_global_scale();
+		ERR_FAIL_COND_MSG(parent_global_scale == 0.0f, "Failed to set global position of the '" + get_name() + "' Node1D because its parent '" + node_1d_parent->get_name() + "' has a zero scale, which is non-invertible.");
+		set_position((p_global_position - node_1d_parent->get_global_position()) / parent_global_scale);
 	} else {
 		set_position(p_global_position);
 	}
@@ -138,7 +140,9 @@ void Node1D::set_global_position(const real_t p_global_position) {
 void Node1D::set_global_scale(const real_t p_global_scale) {
 	Node1D *node_1d_parent = Object::cast_to<Node1D>(get_parent());
 	if (node_1d_parent) {
-		set_scale(p_global_scale / node_1d_parent->get_global_scale());
+		const real_t parent_global_scale = node_1d_parent->get_global_scale();
+		ERR_FAIL_COND_MSG(parent_global_scale == 0.0f, "Failed to set global scale of the '" + get_name() + "' Node1D because its parent '" + node_1d_parent->get_name() + "' has a zero scale, which is non-invertible.");
+		set_scale(p_global_scale / parent_global_scale);
 	} else {
 		set_scale(p_global_scale);
 	}
