@@ -28,10 +28,12 @@ Array Area1D::get_overlapping_bodies() const {
 }
 
 bool Area1D::overlaps_area(const Area1D *p_area) const {
+	ERR_FAIL_NULL_V(p_area, false);
 	return overlaps_body(p_area);
 }
 
 bool Area1D::overlaps_body(const CollisionObject1D *p_body) const {
+	ERR_FAIL_NULL_V(p_body, false);
 	real_t area_position = get_global_position();
 	real_t area_extents = get_global_size() / 2;
 	real_t left_extent = area_position - area_extents;
