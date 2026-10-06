@@ -4,7 +4,7 @@
 #include "scene/main/viewport.h"
 #include "scene/scene_string_names.h"
 
-#ifdef TOOLS_ENABLED
+#ifdef CANVAS_ITEM_EDIT_ENABLED
 Rect2 Sprite1D::_edit_get_rect() const {
 	return get_rect();
 }
@@ -12,7 +12,7 @@ Rect2 Sprite1D::_edit_get_rect() const {
 bool Sprite1D::_edit_use_rect() const {
 	return _texture.is_valid();
 }
-#endif
+#endif // CANVAS_ITEM_EDIT_ENABLED
 
 Rect2 Sprite1D::get_anchorable_rect() const {
 	return get_rect();

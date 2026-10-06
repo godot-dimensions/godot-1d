@@ -21,10 +21,10 @@ protected:
 	virtual void _validate_property(PropertyInfo &property) const;
 
 public:
-#ifdef TOOLS_ENABLED
+#ifdef CANVAS_ITEM_EDIT_ENABLED
 	virtual Rect2 _edit_get_rect() const override;
 	virtual bool _edit_use_rect() const override;
-#endif
+#endif // CANVAS_ITEM_EDIT_ENABLED
 
 	void set_texture(const Ref<Texture2D> &p_texture);
 	Ref<Texture2D> get_texture() const;

@@ -6,7 +6,7 @@
 #include "servers/rendering/rendering_server.h"
 #endif
 
-#ifdef TOOLS_ENABLED
+#ifdef CANVAS_ITEM_EDIT_ENABLED
 Dictionary Node1D::_edit_get_state() const {
 	Dictionary state;
 	state["position"] = _position;
@@ -65,7 +65,7 @@ void Node1D::_edit_set_rect(const Rect2 &p_edit_rect) {
 	_scale *= new_scale;
 	_update_transform();
 }
-#endif // TOOLS_ENABLED
+#endif // CANVAS_ITEM_EDIT_ENABLED
 
 void Node1D::_update_transform() {
 	RenderingServer::get_singleton()->canvas_item_set_transform(get_canvas_item(), get_transform());

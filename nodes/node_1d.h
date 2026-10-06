@@ -17,26 +17,26 @@ protected:
 	static void _bind_methods();
 
 public:
-#ifdef TOOLS_ENABLED
-	virtual Dictionary _edit_get_state() const override;
-	virtual void _edit_set_state(const Dictionary &p_state) override;
+#ifdef CANVAS_ITEM_EDIT_ENABLED
+	virtual Dictionary _edit_get_state() const MODULE_OVERRIDE;
+	virtual void _edit_set_state(const Dictionary &p_state) MODULE_OVERRIDE;
 
-	virtual void _edit_set_position(const Point2 &p_position) override;
-	virtual Point2 _edit_get_position() const override;
+	virtual void _edit_set_position(const Point2 &p_position) MODULE_OVERRIDE;
+	virtual Point2 _edit_get_position() const MODULE_OVERRIDE;
 
-	virtual void _edit_set_scale(const Size2 &p_scale) override;
-	virtual Size2 _edit_get_scale() const override;
+	virtual void _edit_set_scale(const Size2 &p_scale) MODULE_OVERRIDE;
+	virtual Size2 _edit_get_scale() const MODULE_OVERRIDE;
 
-	virtual void _edit_set_rotation(real_t p_rotation) override;
-	virtual real_t _edit_get_rotation() const override;
-	virtual bool _edit_use_rotation() const override;
+	virtual void _edit_set_rotation(real_t p_rotation) MODULE_OVERRIDE;
+	virtual real_t _edit_get_rotation() const MODULE_OVERRIDE;
+	virtual bool _edit_use_rotation() const MODULE_OVERRIDE;
 
-	virtual void _edit_set_rect(const Rect2 &p_edit_rect) override;
-#endif
+	virtual void _edit_set_rect(const Rect2 &p_edit_rect) MODULE_OVERRIDE;
+#endif // CANVAS_ITEM_EDIT_ENABLED
 
 	real_t get_position() const;
 	real_t get_scale() const;
-	Transform2D get_transform() const override;
+	Transform2D get_transform() const MODULE_OVERRIDE;
 	void set_position(const real_t p_position);
 	void set_scale(const real_t p_scale);
 	void translate(const real_t p_amount);

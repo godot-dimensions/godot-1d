@@ -6,6 +6,8 @@
 #include "core/string/ustring.h"
 #include "core/version.h"
 
+#define MODULE_OVERRIDE override
+
 #ifndef GODOT_VERSION_MAJOR
 // Prior to Godot 4.5, the Godot version macros were just "VERSION_*" which did not match the godot-cpp API.
 // See https://github.com/godotengine/godot/pull/103557
@@ -33,6 +35,17 @@
 #define Math_SQRT2 Math::SQRT2
 #define Math_TAU Math::TAU
 #endif
+
+#if GODOT_VERSION_MAJOR > 4 || (GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR > 7)
+// In Godot 4.8 and later, CanvasItem's `_edit_*` functions exist in all debug builds, not only in editor builds.
+// See https://github.com/godotengine/godot/pull/122510 for details.
+#ifdef DEBUG_ENABLED
+#define CANVAS_ITEM_EDIT_ENABLED 1
+#endif
+#elif defined(TOOLS_ENABLED)
+#define CANVAS_ITEM_EDIT_ENABLED 1
+#endif
+
 #else
 #error "Must build as a Godot module."
 #endif
